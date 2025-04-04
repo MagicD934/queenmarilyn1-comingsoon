@@ -25,7 +25,45 @@
       height: 100%;
       object-fit: cover;
       z-index: -1;
-    }
+    }<div style="position: absolute; right: 5%; top: 50%; transform: translateY(-50%); max-width: 400px; background: rgba(0, 0, 0, 0.7); padding: 30px; border-radius: 12px; color: white; font-family: 'Helvetica Neue', sans-serif; box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);">
+  <h2 style="margin-top: 0; font-size: 24px; text-transform: uppercase; letter-spacing: 1px; color: #FFD1DC;">Queen Marilyn 1's Newsletter</h2>
+  <p style="font-size: 16px; margin-bottom: 20px;">Be the first to access exclusive mixes, cinematic drops, and inspiration from Queen Marilyn 1.</p>
+  <form id="subscribe-form">
+    <input type="email" name="email" placeholder="Enter your email" required 
+      style="width: 100%; padding: 12px; border: none; border-radius: 6px; margin-bottom: 15px; font-size: 14px;" />
+    <button type="submit" 
+      style="width: 100%; padding: 12px; background: #FFD1DC; color: black; border: none; border-radius: 6px; font-weight: bold; cursor: pointer;">
+      Subscribe
+    </button>
+    <p id="response-msg" style="margin-top: 15px; font-size: 14px;"></p>
+  </form>
+</div>
+
+<script>
+  const form = document.getElementById('subscribe-form');
+  const responseMsg = document.getElementById('response-msg');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    const email = formData.get('email');
+
+    fetch('https://script.google.com/macros/s/AKfycbxU2MYXJfunSKWKI-FgFzsyIFDTgQcpmtVRDSYR5PSXPNcLvBfASHEDwuw4CF9YkorekA/exec', {
+      method: 'POST',
+      body: new URLSearchParams({ email: email })
+    })
+    .then(response => response.text())
+    .then(result => {
+      responseMsg.textContent = "You're officially in the glam circle 💌✨";
+      form.reset();
+    })
+    .catch(error => {
+      responseMsg.textContent = "Oops! Something went wrong. Please try again.";
+      console.error('Error!', error.message);
+    });
+  });
+</script>
     .content {
       position: relative;
       z-index: 1;
