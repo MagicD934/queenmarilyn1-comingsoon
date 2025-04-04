@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Queen Marilyn 1 – A New Era Is Coming</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat&display=swap" rel="stylesheet">
   <style>
@@ -11,12 +11,12 @@
       padding: 0;
       box-sizing: border-box;
     }
-    body, html {
+    html, body {
       height: 100%;
       font-family: 'Montserrat', sans-serif;
-      color: #fff;
-      background: #000;
-      position: relative;
+      background-color: #000;
+      color: white;
+      overflow: hidden;
     }
     .video-bg {
       position: fixed;
@@ -26,69 +26,23 @@
       height: 100vh;
       object-fit: cover;
       z-index: -1;
-      opacity: 0.3;
     }
     .content {
       position: absolute;
-      left: 5%;
       top: 50%;
-      transform: translateY(-50%);
-      max-width: 500px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 1;
     }
-    .content h1 {
+    h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 3rem;
+      font-size: 3em;
       margin-bottom: 0.3em;
     }
-    .content p {
-      font-size: 1.2rem;
-      margin-bottom: 2em;
-    }
-    .form-container {
-      position: absolute;
-      right: 5%;
-      top: 50%;
-      transform: translateY(-50%);
-      max-width: 400px;
-      background: rgba(0, 0, 0, 0.7);
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
-    }
-    .form-container h2 {
-      margin-top: 0;
-      font-size: 24px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: #FFD1DC;
-    }
-    .form-container p {
-      font-size: 16px;
-      margin-bottom: 20px;
-    }
-    .form-container input[type="email"] {
-      width: 100%;
-      padding: 12px;
-      border: none;
-      border-radius: 6px;
-      margin-bottom: 15px;
-      font-size: 14px;
-    }
-    .form-container button {
-      width: 100%;
-      padding: 12px;
-      background: #FFD1DC;
-      color: black;
-      border: none;
-      border-radius: 6px;
-      font-weight: bold;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    .form-container #response-msg {
-      margin-top: 15px;
-      font-size: 14px;
-      color: #FFD1DC;
+    p {
+      font-size: 1.25em;
+      opacity: 0.85;
     }
   </style>
 </head>
@@ -101,42 +55,5 @@
     <h1>Queen Marilyn 1</h1>
     <p>A New Era Is Coming</p>
   </div>
-
-  <div class="form-container">
-    <h2>Queen Marilyn 1's Newsletter</h2>
-    <p>Be the first to access exclusive mixes, cinematic drops, and inspiration from Queen Marilyn 1.</p>
-    <form id="subscribe-form">
-      <input type="email" name="email" placeholder="Enter your email" required />
-      <button type="submit">Subscribe</button>
-      <p id="response-msg"></p>
-    </form>
-  </div>
-
-  <script>
-    const form = document.getElementById('subscribe-form');
-    const responseMsg = document.getElementById('response-msg');
-
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      const formData = new FormData(form);
-      const email = formData.get('email');
-
-      fetch('https://script.google.com/macros/s/AKfycbxU2MYXJfunSKWKI-FgFzsyIFDTgQcpmtVRDSYR5PSXPNcLvBfASHEDwuw4CF9YkorekA/exec', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams({ email: email })
-      })
-      .then(response => response.text())
-      .then(result => {
-        responseMsg.textContent = "You're officially in the glam circle 💌✨";
-        form.reset();
-      })
-      .catch(error => {
-        responseMsg.textContent = "Oops! Something went wrong. Please try again.";
-        console.error('Error!', error.message);
-      });
-    });
-  </script>
 </body>
 </html>
