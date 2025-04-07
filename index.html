@@ -3,92 +3,92 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Queen Marilyn 1 — A New Era Coming Soon</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat&display=swap" rel="stylesheet">
+  <title>Queen Marilyn 1 – Coming Soon</title>
   <style>
-    * {
+    body, html {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background-color: #000;
-      color: #fff;
-      line-height: 1.6;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
+      height: 100%;
+      font-family: 'Helvetica Neue', sans-serif;
       overflow: hidden;
+      color: white;
+      text-align: center;
+      background-color: black;
     }
+
     .video-bg {
       position: fixed;
       top: 0;
       left: 0;
-      width: 100vw;
-      height: 100vh;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
       z-index: -1;
     }
-    .content {
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      background: rgba(0, 0, 0, 0.4);
       z-index: 1;
+      padding: 20px;
     }
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 4rem;
-      margin-bottom: 10px;
-      text-transform: uppercase;
-    }
-    p.subtitle {
-      font-size: 1.3rem;
-      margin-bottom: 30px;
-    }
-    p.main-text {
-      font-size: 1.2rem;
-      margin-bottom: 30px;
-    }
-    .cta-button {
-      background-color: #FFD1DC;
-      color: #000;
-      padding: 12px 28px;
-      border: none;
-      border-radius: 30px;
-      font-size: 1rem;
+
+    .headline {
+      font-size: 2.5em;
       font-weight: bold;
-      text-transform: uppercase;
-      cursor: pointer;
-      text-decoration: none;
+      margin: 0.5em 0 0.25em;
     }
-    .social-icons {
-      margin-top: 30px;
+
+    .subline {
+      font-size: 1em;
+      font-weight: 300;
+      max-width: 90%;
+      margin: 0 auto;
     }
-    .social-icons a {
-      margin: 0 10px;
+
+    .social-links {
+      margin-top: 1.5em;
+    }
+
+    .social-links a {
       color: white;
-      font-size: 1.4rem;
       text-decoration: none;
+      margin: 0 10px;
+      font-size: 1.2em;
     }
-    .social-icons a:hover {
-      color: #FFD1DC; /* Light color on hover */
+
+    @media (max-width: 600px) {
+      .headline {
+        font-size: 2em;
+      }
+      .subline {
+        font-size: 0.9em;
+      }
+      .social-links a {
+        font-size: 1em;
+      }
     }
   </style>
 </head>
 <body>
-  <video autoplay muted loop playsinline class="video-bg">
-    <source src="https://github.com/MagicD934/queenmarilyn1-comingsoon/raw/refs/heads/main/Queenize%20Your%20Life!.mp4" type="video/mp4">
+  <video id="bgVideo" class="video-bg" autoplay muted playsinline>
+    <source src="QueenizeYourLife!.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
   </video>
 
-  <div class="content">
-    <h1>Queen Marilyn 1</h1>
-    <p class="subtitle">A New Era Coming Soon</p>
-    <p class="main-text">
-      Subscribe by following on all social media, type your handle, and use Hashtag <strong>#Queenyasss</strong> so we can recognize and celebrate you.
-    </p>
-    <a href="https://www.instagram.com/queenmarilyn1/" target="_blank" class="cta-button">Follow on Instagram</a>
+  <div class="overlay" id="overlay">
+    <div class="headline">A New Era Coming Soon</div>
+    <div class="subline">Follow on all social and use hashtag #queenmarilyn1 so we recognise and celebrate you.</div>
 
-    <div class="social-icons">
+    <div class="social-links">
       <a href="https://www.instagram.com/queenmarilyn1/" target="_blank">Instagram</a>
       <a href="https://www.tiktok.com/@queenmarilynone" target="_blank">TikTok</a>
       <a href="https://www.youtube.com/c/QueenMarilyn1" target="_blank">YouTube</a>
