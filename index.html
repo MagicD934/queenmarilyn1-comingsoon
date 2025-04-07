@@ -16,17 +16,7 @@
       background-color: black;
     }
 
-    <video id="bgVideo" class="video-bg" autoplay muted playsinline></video>
-
-<script>
-  const videoElement = document.getElementById('bgVideo');
-  const sourceElement = document.createElement('source');
-  sourceElement.setAttribute('src', 'https://www.queenmarilyn1.com/QueenizeYourLife.mp4');
-  sourceElement.setAttribute('type', 'video/mp4');
-  videoElement.appendChild(sourceElement);
-  videoElement.load();
-</script>  
-</video>
+    .video-bg {
       position: fixed;
       top: 0;
       left: 0;
@@ -61,7 +51,7 @@
       font-size: 1em;
       font-weight: 300;
       max-width: 90%;
-      margin: 0 auto 1em;
+      margin: 0 auto;
     }
 
     .social-links {
@@ -95,8 +85,9 @@
   </video>
 
   <div class="overlay" id="overlay">
-    <div class="headline">A New Era Coming Soon</div>
-    <div class="subline">Follow on all social and use hashtag #queenmarilyn1 so we recognise and celebrate you.</div>
+    <div class="headline">Queen Marilyn 1</div>
+    <div class="subline">A New Era Coming Soon</div>
+    <div class="subline">Subscribe by following on all social media, type your handle, and use Hashtag #Queenyasss so we can recognize and celebrate you.</div>
 
     <div class="social-links">
       <a href="https://www.instagram.com/queenmarilyn1/" target="_blank">Instagram</a>
@@ -107,18 +98,5 @@
       <a href="https://uk.pinterest.com/queenmarilyn1/" target="_blank">Pinterest</a>
     </div>
   </div>
-
-  <script>
-    const video = document.getElementById('bgVideo');
-    const overlay = document.getElementById('overlay');
-
-    const unmuteVideo = () => {
-      video.muted = false;
-      video.play();
-      overlay.removeEventListener('click', unmuteVideo);
-    };
-
-    overlay.addEventListener('click', unmuteVideo);
-  </script>
 </body>
 </html>
